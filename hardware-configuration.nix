@@ -11,7 +11,7 @@
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
-  fileSystem."/" =
+  fileSystems."/" =
      { device = "/dev/sda1";
         fsType = "ext4";
      };
