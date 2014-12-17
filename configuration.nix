@@ -21,6 +21,10 @@
   };
   time.timeZone = "Europe/London";
 
+  environment.systemPackages = with pkgs; [
+    git
+  ];
+
   users.defaultUserShell = "/run/current-system/sw/bin/zsh";
 
   users.extraUsers.ian = {
