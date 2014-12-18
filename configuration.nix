@@ -62,41 +62,46 @@
     # };
   };
 
-  services.openssh.enable = true;
-  # services = {
-  #   xserver = {
-  #     autorun = true;
-  #     desktopManager = {
-  #       slim = {
-  #         defaultUser = "ian";
-  #         enable = true;
-  #         theme = pkgs.fetchurl {
-  #           url = https://github.com/jagajaga/nixos-slim-theme/archive/1.0.tar.gz;
-  #           sha256 = "08ygjn5vhn3iavh36pdcb15ij3z34qnxp20xh3s1hy2hrp63s6kn";
-  #         };
-  #       };#slim
-  #       xterm.enable = false;
-  #       default = "none";
-  #       sessionCommands = "
-  #          xmodmap -e 'pointer = 3 2 1 5 4 7 6 8 9 10 11 12'
-  #          /run/current-system/sw/bin/urxvtd -q -o -f
-  #       ";#TODO urxvt as systemd and no keychain
-  #     };#displayManager
-  #     enable = true;
-  #     layout = "gb";
-  #     startGnuPGAgent = true;
-  #     windowManager = {
-  #      i3.enable = true;
-  #      default = "i3";
-  #     };
-  #   };#xserver
-  #   cron.enable = false;
-  # };#services
+  services = {
+    xserver = {
+      autorun = true;
+      desktopManager = {
+        slim = {
+          defaultUser = "ian";
+          enable = true;
+          theme = pkgs.fetchurl {
+            url = https://github.com/jagajaga/nixos-slim-theme/archive/1.0.tar.gz;
+            sha256 = "08ygjn5vhn3iavh36pdcb15ij3z34qnxp20xh3s1hy2hrp63s6kn";
+          };
+        };#slim
+        xterm.enable = false;
+        default = "none";
+        sessionCommands = "
+           xmodmap -e 'pointer = 3 2 1 5 4 7 6 8 9 10 11 12'
+           /run/current-system/sw/bin/urxvtd -q -o -f
+        ";#TODO urxvt as systemd and no keychain
+      };#displayManager
+      enable = true;
+      layout = "gb";
+      startGnuPGAgent = true;
+      windowManager = {
+       i3.enable = true;
+       default = "i3";
+      };
+    };#xserver
+    cron.enable = false;
+    openssh.enable = true;
+  };#services
 
   environment.systemPackages = with pkgs; [
     git
     manpages
     posix_man_pages
+    xlibs.xmodmap
+    xclip
+    xsel
+    tree
+    rlwrap
     i3
     rxvt_unicode
     emacs
