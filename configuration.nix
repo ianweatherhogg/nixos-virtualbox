@@ -121,6 +121,7 @@
     extraGroups = [
       "wheel"
       "audio"
+      "vboxsf"
     ];
   };
 }
