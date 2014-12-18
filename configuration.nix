@@ -94,7 +94,14 @@
     openssh.enable = true;
   };
 
-
+  environment.variables = {
+    NIX_PATH = pkgs.lib.mkOverride 0 [
+      "nixpkgs=/home/ian/.nix-defexpr/channels/nixpkgs"
+      "nixos=/home/ian/.nix-defexpr/channels/nixpkgs/nixos"
+      "nixos-config=/etc/nixos/configuration.nix"
+    ];
+  };
+  
   environment.systemPackages = with pkgs; [
     git
     manpages
@@ -108,7 +115,7 @@
     rxvt_unicode
     emacs
     # emacsPackages.org
-    # texLiveFull
+    texLiveFull
     darcs
     scala
   ];
