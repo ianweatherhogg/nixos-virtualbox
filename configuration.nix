@@ -62,6 +62,7 @@
     # };
   };
 
+  services.openssh.enable = true;
   # services = {
   #   xserver = {
   #     autorun = true;
@@ -98,7 +99,7 @@
     posix_man_pages
     i3
     rxvt_unicode
-    # emacs
+    emacs
     # emacsPackages.org
     # texLiveFull
     darcs
