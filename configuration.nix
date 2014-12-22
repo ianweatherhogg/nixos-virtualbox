@@ -45,7 +45,7 @@
   #   ];
   # };
 
-  # nix = {
+  nix = {
     maxJobs = 1; 
     package = pkgs.nixUnstable;
   };
