@@ -16,7 +16,6 @@
         fsType = "ext4";
      };
 
-  nix.maxJobs = 1;
   services.virtualbox.enable = true;
 
 }
