@@ -82,30 +82,28 @@
     };
     enable = true;
     layout = "gb";
-    startGnuPGAgent = true;
+#    startGnuPGAgent = true;
     windowManager = {
      i3.enable = true;
      default = "i3";
     };
   };
 
-  services = {
-    cron.enable = false;
-    openssh.enable = true;
-  };
+  services.cron.enable = false;
+  services.openssh.enable = true;
 
-  environment.variables = {
-    NIX_PATH = pkgs.lib.mkOverride 0 [
-      "nixpkgs=/home/ian/.nix-defexpr/channels/nixpkgs"
-      "nixos=/home/ian/.nix-defexpr/channels/nixpkgs/nixos"
-      "nixos-config=/etc/nixos/configuration.nix"
-    ];
-  };
-  
+  # environment.variables = {
+  #   NIX_PATH = pkgs.lib.mkOverride 0 [
+  #     "nixpkgs=/home/ian/.nix-defexpr/channels/nixpkgs"
+  #     "nixos=/home/ian/.nix-defexpr/channels/nixpkgs/nixos"
+  #     "nixos-config=/etc/nixos/configuration.nix"
+  #   ];
+  # };
+
   environment.systemPackages = with pkgs; [
     git
-    manpages
-    posix_man_pages
+    # manpages
+    # posix_man_pages
     xlibs.xmodmap
     xclip
     xsel
@@ -113,11 +111,11 @@
     rlwrap
     i3
     rxvt_unicode
-    emacs
-    # emacsPackages.org
-    texLiveFull
-    darcs
-    scala
+    # emacs
+    # # emacsPackages.org
+    # texLiveFull
+    # darcs
+    # scala
   ];
 
   users.defaultUserShell = "/run/current-system/sw/bin/zsh";
