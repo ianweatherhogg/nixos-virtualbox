@@ -35,20 +35,19 @@
     fonts = with pkgs; [
       corefonts  # Micrsoft free fonts
       inconsolata  # monospaced
-      ubuntu_font_family  # Ubuntu fonts
-      dejavu_fonts
-      vistafonts
-      ttf_bitstream_vera
-      liberation_ttf
-      dejavu_fonts
-      terminus_font
-    ];
-  };
+  #     # ubuntu_font_family  # Ubuntu fonts
+  #     # dejavu_fonts
+  #     # vistafonts
+  #     # ttf_bitstream_vera
+  #     # liberation_ttf
+  #     # dejavu_fonts
+  #     # terminus_font
+  #   ];
+  # };
 
-  nix = {
-    # maxJobs = 1; # repeated in hardware-configuration.nix
+  # nix = {
+    maxJobs = 1; 
     package = pkgs.nixUnstable;
-    useChroot = true;
   };
 
   nixpkgs.config = {
