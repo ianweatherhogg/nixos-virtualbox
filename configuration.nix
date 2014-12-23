@@ -107,6 +107,7 @@
     xlibs.xmodmap
     xclip
     xsel
+    dmenu
     tree
     rlwrap
     i3
