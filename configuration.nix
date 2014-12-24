@@ -111,6 +111,7 @@
     tree
     rlwrap
     i3
+    i3status
     rxvt_unicode
     # emacs
     # # emacsPackages.org
